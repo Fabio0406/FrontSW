@@ -67,11 +67,11 @@ const Reunion: React.FC = () => {
   const navigate = useNavigate()
 
   const diagramRef = useRef<ReactDiagram | null>(null);
-  const socket = io('https://backendsw1-production.up.railway.app/reunion');
+  const socket = io('https://backsw.up.railway.app/reunion');
   let timeoutId;
 
   useEffect(() => {
-    axios.get(`https://backendsw1-production.up.railway.app/diagrama/obtenerDiagramaIdReunion/${id}`)
+    axios.get(`https://backsw.up.railway.app/diagrama/obtenerDiagramaIdReunion/${id}`)
       .then(async (response) => {
 
 
@@ -79,7 +79,7 @@ const Reunion: React.FC = () => {
 
         console.log("tipo: ", tipo)
         if (tipo === 'unirse' || tipo === 'nueva' || (location.state && location.state.usuarioId === response.data.usuarioId)) {
-          // await axios.post(`https://backendsw1-production.up.railway.app/colaborador/agregar`, { //Registramos al usuario como colaborador
+          // await axios.post(`https://backsw.up.railway.app/colaborador/agregar`, { //Registramos al usuario como colaborador
           //   usuarioId: usuarioId, // Asegúrate de tener el ID del usuario en el estado de tu componente
           //   reunionId: id, // ID de la reunión a la que se está uniendo el usuario
           // });
@@ -210,7 +210,7 @@ const Reunion: React.FC = () => {
         
         saveAs(blob, 'diagrama.svg');
 
-        axios.post('https://backendsw1-production.up.railway.app/reuniones/savesvg', { svgString: svgText, id })
+        axios.post('https://backsw.up.railway.app/reuniones/savesvg', { svgString: svgText, id })
           .then(_response => {
             // console.log('SVG guardado correctamente en el servidor:', response.data);
           })
@@ -231,7 +231,7 @@ const Reunion: React.FC = () => {
       });
       const svgText = new XMLSerializer().serializeToString(svgString);
 
-      axios.post('https://backendsw1-production.up.railway.app/reuniones/savesvg', { svgString: svgText, id })
+      axios.post('https://backsw.up.railway.app/reuniones/savesvg', { svgString: svgText, id })
         .then(_response => {
           // console.log('SVG guardado correctamente en el servidor:', response.data);
         })
@@ -250,7 +250,7 @@ const Reunion: React.FC = () => {
           linkDataArray: diagram.model.linkDataArray
         };
 
-        axios.post('https://backendsw1-production.up.railway.app/reuniones/java', requestData)
+        axios.post('https://backsw.up.railway.app/reuniones/java', requestData)
           .then(response => {
             // Obtener el contenido de texto del servidor
             const javaCode = response.data;
@@ -290,7 +290,7 @@ const Reunion: React.FC = () => {
           linkDataArray: diagram.model.linkDataArray
         };
 
-        axios.post('https://backendsw1-production.up.railway.app/reuniones/python', requestData)
+        axios.post('https://backsw.up.railway.app/reuniones/python', requestData)
           .then(response => {
             // Obtener el contenido de texto del servidor
             const pythonCode = response.data;
@@ -331,7 +331,7 @@ const Reunion: React.FC = () => {
           linkDataArray: diagram.model.linkDataArray
         };
 
-        axios.post('https://backendsw1-production.up.railway.app/reuniones/javascript', requestData)
+        axios.post('https://backsw.up.railway.app/reuniones/javascript', requestData)
           .then(response => {
             // Obtener el contenido de texto del servidor
             const jsCode = response.data;

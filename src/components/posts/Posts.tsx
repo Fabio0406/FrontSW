@@ -16,7 +16,7 @@ const Posts: React.FC = () => {
   const userData = localDataParsed && Object.keys(localDataParsed).length > 0 ? JSON.parse(localDataParsed.userData) : null;
 
   const navigate = useNavigate()
-  const socket = io('https://backendsw1-production.up.railway.app/reunion');
+  const socket = io('https://backsw.up.railway.app/reunion');
 
   const [password,] = useState('');
 

@@ -8,9 +8,6 @@ import { ReactDiagram } from "gojs-react";
 import { io } from 'socket.io-client';
 import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { EAConverter } from './exportToEa'; 
-import { fontSize, fontStyle } from "@mui/system";
-import { Button, colors } from "@mui/material";
 
 const initialData = {
   nodeDataArray: [
@@ -169,29 +166,6 @@ const Reunion: React.FC = () => {
     }
 
     console.log("Model changed:", obj);
-  };
-  const downloadJSON = (data, filename) => {
-    const blob = new Blob([data], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    a.click();
-
-    URL.revokeObjectURL(url); // Liberar el objeto URL
-  };
-
-  const handleDownloadButtonClick = () => {
-    if (diagramRef.current) {
-      const diagram = diagramRef.current.getDiagram();
-      if (diagram) {
-        const eaCode = EAConverter.converterToEa(diagram.model.nodeDataArray,
-          // @ts-ignore
-          diagram.model.linkDataArray);
-        downloadJSON(eaCode, "ea_data.xmi");
-      }
-    }
   };
   
 

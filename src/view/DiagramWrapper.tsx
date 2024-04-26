@@ -341,7 +341,7 @@ const DiagramWrapper: React.FC<DiagramWrapperProps> = ({
         { name: "HEADER" },
         $(go.Shape, "Rectangle", {
           fill: $(go.Brush, "Linear", {
-            0: "#bbdefb",
+            0: "#01696e",
             1: go.Brush.darkenBy("#bbdefb", 0.1),
           }),
           stroke: null,

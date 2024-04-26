@@ -9,6 +9,8 @@ import { io } from 'socket.io-client';
 import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { EAConverter } from './exportToEa'; 
+import { fontSize, fontStyle } from "@mui/system";
+import { Button, colors } from "@mui/material";
 
 const initialData = {
   nodeDataArray: [
@@ -408,43 +410,65 @@ const Reunion: React.FC = () => {
   <input type="file" accept=".gojs" onChange={handleUploadFile} key={Math.random()} />
 
   return (
-    <div>
-      <DiagramWrapper
-        diagramRef={diagramRef}
-        nodeDataArray={data.nodeDataArray}
-        linkDataArray={data.linkDataArray}
-        onDiagramEvent={handleDiagramEvent}
-        onModelChange={handleModelChange}
-      // onNodeDoubleClicked={handleNodeDoubleClicked}
-      />
-      <button onClick={addNode}>Add Node</button>
-      <div>
-        <button onClick={handleDownloadButtonClick}>Exportar Diagrama a .EA</button>
-      </div>
-      <div>
-        <button onClick={downloadSvg}>Descargar Imagen SVG</button>
-      </div>
-      <div>
-        <button onClick={handleConvertJavaButtonClick}>Convertir a Java</button>
-      </div>
-      <div>
-        <button onClick={handleConvertPythonButtonClick}>Convertir a Python</button>
-      </div>
-      <div>
-        <button onClick={handleConvertJavaScriptButtonClick}>Convertir a JavaScript</button>
-      </div>
-      <div>
-        <button onClick={handleGojsDownloadButtonClick}>Descargar Diagrama GoJs</button>
-      </div>
-      <input type="file" accept=".gojs" onChange={handleUploadFile} key={Math.random()} />
+    <div style={{ 
+      maxHeight: "80vh", 
+      overflowY: "scroll", 
+      overflowX: "hidden",
+      backgroundColor: "#f5f5f5", // Color de fondo gris claro
+      padding: "20px", // Espaciado interior de 20px
+      borderRadius: "8px", // Bordes redondeados de 8px
+      boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Sombra ligera
+      fontSize: "15px",
+      }}>
 
       <div>
-        Datos de la Reunión:
+          Datos de la Reunión:
         <ul>
-          <li>Codigo de la Reunión: {codigo} </li>
+          <li>Código de la Reunión: {codigo} </li>
           {/* {password && <li>Contraseña de la Reunión: {password}</li>} */}
         </ul>
       </div>
+
+      <br></br>
+        <DiagramWrapper
+          diagramRef={diagramRef}
+          nodeDataArray={data.nodeDataArray}
+          linkDataArray={data.linkDataArray}
+          onDiagramEvent={handleDiagramEvent}
+          onModelChange={handleModelChange}
+        // onNodeDoubleClicked={handleNodeDoubleClicked}
+        />
+      <br></br>
+      <div>
+          Abrir archivo:
+      </div>
+      <br></br>
+      <div>
+        <input type="file" accept=".gojs" onChange={handleUploadFile} key={Math.random()} />
+      </div>
+
+      <br></br>
+      <div>
+          Opciones:
+      </div>
+      <div style={{ 
+        maxHeight: "80vh", 
+        overflowX: "hidden",
+        backgroundColor: "#f5f5f5", // Color de fondo gris claro
+        padding: "20px", // Espaciado interior de 20px
+        borderRadius: "8px", // Bordes redondeados de 8px
+        fontSize: "15px",
+        }}>
+      
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={addNode}>Añadir Nodo</button>
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={downloadSvg}>Descargar Imagen SVG</button>
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={handleConvertJavaButtonClick}>Convertir a Java</button>
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={handleConvertPythonButtonClick}>Convertir a Python</button>
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={handleConvertJavaScriptButtonClick}>Convertir a JavaScript</button>
+        <button style={{backgroundColor: "#df6705", color: "white"}} onClick={handleGojsDownloadButtonClick}>Descargar Diagrama GoJs</button>
+
+      </div>
+
     </div>
   );
 };

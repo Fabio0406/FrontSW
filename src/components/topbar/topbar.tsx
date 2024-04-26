@@ -33,11 +33,9 @@ const Topbar: React.FC = () => {
           </li>
           <li className="topListItem">
             <Link className="link, topListItem" to="/diagramas">
-              Tus Diagramas
+              Mis Diagramas
             </Link>
           </li>
-          <li className="topListItem">Sobre Mí</li>
-          <li className="topListItem">Contáctame</li>
         </ul>
       </div>
       <div className="topRight">
@@ -54,7 +52,7 @@ const Topbar: React.FC = () => {
                 <Link className="link" to="/settings">
                   <img
                     className="topImg" style={{ marginTop: '17px' }}
-                    src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    src="/perfil.png"
                     alt=""
                   />
                 </Link>

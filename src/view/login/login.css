@@ -5,32 +5,65 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(231, 90, 9, 0.651),
+      rgba(255, 255, 255, 0.295)
     ),
-    url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    url("/fondo1.png");
   background-size: cover;
 }
 
 .loginTitle {
-  font-size: 50px;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgb(17, 6, 6);
+}
+
+/* Estilo global */
+body {
+  font-family: Arial, sans-serif;
 }
 
 .loginForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  background-color: #01696e; /* Naranja con 50% de opacidad */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .loginForm > label {
   margin: 10px 0;
+  color: rgb(255, 255, 255);
 }
 
 .loginInput {
-  padding: 10px;
-  background-color: white;
+  width: 200px; /* Ancho del campo de entrada */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde del campo de entrada */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente */
+  outline: none; /* Elimina el resaltado al hacer clic */
+  transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+button {
+  background-color: #01696e;
+  color: #fff;
   border: none;
-  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 20px;
+  border-radius: 20px; /* Valor ajustado para bordes curvos */
+}
+
+button:hover {
+  background-color: #04292a;
 }
 
 .loginInput:focus {
@@ -40,7 +73,7 @@
 .loginButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: lightcoral;
+  background-color: #df6705;
   color: white;
   padding: 10px;
   border: none;
@@ -49,10 +82,9 @@
 }
 
 .loginRegisterButton {
-  position: absolute;
   top: 60px;
   right: 20px;
-  background-color: teal;
+  background-color: rgb(102, 93, 85);
   cursor: pointer;
   padding: 10px;
   border: none;

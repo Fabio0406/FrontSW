@@ -1,33 +1,81 @@
 .settings {
   display: flex;
+  flex-direction: column; /* Cambiado a columna para que se vea mejor */
+  align-items: center; /* Centrado horizontal */
+  background: linear-gradient(
+      rgba(231, 90, 9, 0.651),
+      rgba(134, 125, 125, 0.295)
+    ),
+    url("/fondo1.png");
+  background-size: cover;
 }
 
 .settingsWrapper {
-  flex: 9;
-  padding: 20px;
+  padding: 35px;
 }
 
 .settingsTitle {
   display: flex;
+  font-weight: bold; /* Añadimos negrita */
+  color: white;
   align-items: center;
   justify-content: space-between;
 }
 
+
 .settingsTitleUpdate {
-  font-size: 30px;
+  font-size: 30px; /* Ajustado el tamaño de fuente */
   margin-bottom: 20px;
-  color: lightcoral;
+  color: #050505; /* Color naranja similar al del login */
 }
 
 .settingsTitleDelete {
-  color: red;
-  font-size: 12px;
+  color: rgb(2, 2, 2);
+  font-size: 16px; /* Ajustado el tamaño de fuente */
   cursor: pointer;
 }
 
 .settingsForm {
   display: flex;
   flex-direction: column;
+  background-color: #01696e; /* Color de fondo similar al del login */
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px; /* Separación del título */
+}
+
+.settingsForm > label {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #fff; /* Color de texto blanco */
+}
+
+.settingsForm > input {
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 15px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  background-color: transparent; /* Fondo transparente */
+}
+
+.settingsSubmitButton {
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #df6705; /* Color naranja similar al del login */
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingsSubmitButton:hover {
+  background-color: #a54f00; /* Color naranja más oscuro al hacer hover */
 }
 
 .settingsPP {
@@ -63,39 +111,3 @@
   outline-style: none;
 }
 
-.settingsForm > label {
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.settingsPPInput {
-  width: 30%;
-}
-
-.settingsForm > input {
-  color: gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  height: 30px;
-  border: none;
-  border-bottom: 1px solid lightgray;
-}
-
-.settingsSubmitButton {
-  align-self: center;
-  width: 150px;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  background-color: teal;
-  padding: 10px;
-  margin-top: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.settingsSubmitButton:hover {
-  background-color: rgb(1, 114, 114);
-}

@@ -6,7 +6,7 @@ const Footer: React.FC = () =>{
         <div>
             <link rel="stylesheet" href="./footer.css" />
             <footer>
-                <p>&copy; 2023 CodeFlowMeet</p>
+                <p></p>
             </footer>
         </div>
     );

@@ -114,9 +114,9 @@ const Posts: React.FC = () => {
     <div>
       <main>
         <section className="hero">
-          <h1>Reuniones virtuales fáciles y efectivas</h1>
-          <p>Conéctate con colegas y amigos en cualquier lugar y en cualquier momento.</p>
-          <button onClick={openModal}>Iniciar una reunión</button>
+          <h1>Te permitirá poner tus ideas en acción</h1>
+          <p>Conéctate y crea con colegas y amigos, sin importar dónde estés.</p>
+          <button onClick={openModal}>Nueva Reunión</button>
           <div>
             <input
               type="text"
@@ -134,10 +134,11 @@ const Posts: React.FC = () => {
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            <h2>Iniciar una reunión</h2>
+            <h2>Nueva Reunión</h2>
+            <br></br>
             {/* Formulario para crear la reunión */}
             <form onSubmit={handleFormSubmit}>
-              <label htmlFor="name">Nombre:</label>
+              <label htmlFor="name">Nombre: </label>
               <input
                 type="text"
                 id="name"
@@ -146,7 +147,8 @@ const Posts: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <label htmlFor="description">Descripción:</label>
+              <br></br>
+              <label htmlFor="description">Descripción: </label>
               <textarea
                 id="description"
                 name="description"
@@ -154,6 +156,7 @@ const Posts: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
+              <br></br>
               <button type="submit" >Crear Reunión</button>
             </form>
           </div>
@@ -164,3 +167,4 @@ const Posts: React.FC = () => {
 };
 
 export default Posts;
+

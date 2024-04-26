@@ -40,11 +40,12 @@ const Login: React.FC = () => {
 
   return (
     <div className="login">
-      <span className="loginTitle">Inicio de Sesión</span>
+      <span className="loginTitle">Iniciar Sesión</span>
       {error && <p>{error}</p>} {/* Muestra el mensaje de error si está configurado */}
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label>Número de C.I</label>
-        <input
+        <label>Carnet de Identidad</label>
+        <input 
+          className ="loginInput"
           type="number"
           placeholder="Ingrese su C.I"
           value={formData.ci}
@@ -52,16 +53,18 @@ const Login: React.FC = () => {
         />
         <label>Contraseña</label>
         <input
+          className ="loginInput"
           type="password"
           placeholder="Contraseña"
           value={formData.contrasena}
           onChange={(e) => setFormData({ ...formData, contrasena: e.target.value })}
         />
         <button className="loginButton">Iniciar Sesión</button>
+        <button className="loginRegisterButton">
+          <Link to="/register">¿No tienes una cuenta?</Link>
+        </button>
       </form>
-      <button className="loginRegisterButton">
-        <Link to="/register">No estás registrado?</Link>
-      </button>
+      
     </div>
   );
 };

@@ -42,6 +42,7 @@ export default function Register() {
       setError('Error al iniciar sesión. Por favor, verifica tus credenciales.');
     }
   };
+
   return (
     <div className="register">
       <span className="registerTitle">Registro de nuevo usuario</span>
@@ -97,7 +98,7 @@ export default function Register() {
         <button className="registerButton">Registrar</button>
       </form>
       <button className="registerLoginButton">
-        <Link to="/login">Ya tienes cuenta?</Link>
+        <Link to="/login">¿Tienes una cuenta?</Link>
       </button>
     </div>
   )

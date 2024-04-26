@@ -109,6 +109,7 @@ const Reunion: React.FC = () => {
   // Función para gregar nodo
   const addNode = (_position) => {
     // Genera un nuevo nodo con una clave única
+    //Holaa
     const newNode = {
       key: "newNode" + Date.now(),
       text: "NewNode",
